@@ -3,8 +3,8 @@ import win32gui
 import win32api
 import win32con
 import win32ui
+import pytesseract
 from PIL import Image
-hwnd_title = dict()
 
 
 """
@@ -32,8 +32,3 @@ def win_shot():
 
 if __name__ == '__main__':
     win_shot()
-
-import pytesseract
-from PIL import Image
-text = pytesseract.image_to_string(Image.open('2691716.bmp'),lang='chi_sim')  # chi_sim是简体中文训练包，如果想识别英文去掉lang选项即可
-print(text)
